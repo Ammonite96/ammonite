@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9615b358-7cdb-4a95-9c8a-1dad52d81d6d" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1WIUW5w0EWwKKhyw8PVu0iEySGR" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Arrli">
+    <configuration name="Arrli" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Solution.chapter6.Arrli" />
+      <module name="HeadFirst" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Solution.chapter6.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Chapter5MixFor5" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Solution.Chapter5MixFor5" />
+      <module name="HeadFirst" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Solution.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Chapter5MultiFour" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Solution.Chapter5MultiFour" />
+      <module name="HeadFirst" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Solution.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DotComBust" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SeaBattleConsole.DotComBust" />
+      <module name="HeadFirst" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="SeaBattleConsole.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PhraseOMatic" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PhraseOMatic" />
+      <module name="HeadFirst" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Arrli" />
+        <item itemvalue="Application.DotComBust" />
+        <item itemvalue="Application.PhraseOMatic" />
+        <item itemvalue="Application.Chapter5MixFor5" />
+        <item itemvalue="Application.Chapter5MultiFour" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9615b358-7cdb-4a95-9c8a-1dad52d81d6d" name="Default Changelist" comment="" />
+      <created>1578836630818</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1578836630818</updated>
+      <workItem from="1578836634655" duration="41000" />
+      <workItem from="1578836752868" duration="3878000" />
+      <workItem from="1578926806762" duration="166000" />
+      <workItem from="1578926982866" duration="58000" />
+      <workItem from="1578934077474" duration="653000" />
+      <workItem from="1579103436439" duration="670000" />
+      <workItem from="1579104229261" duration="1180000" />
+      <workItem from="1579541417579" duration="17000" />
+      <workItem from="1580231012414" duration="594000" />
+      <workItem from="1580232930233" duration="733000" />
+      <workItem from="1580314591787" duration="9096000" />
+      <workItem from="1580394554083" duration="967000" />
+      <workItem from="1580645712311" duration="1830000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>
