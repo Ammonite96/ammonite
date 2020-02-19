@@ -1,0 +1,25 @@
+package ru.JavaRush.LvL6;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+/**
+ * Задача: Программа вводит два числа с клавиатуры и выводит их максимум в виде "The max is 25".
+ */
+
+public class Max {
+    public static int max = 100;
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String max = "The max is ";
+        int a = Integer.parseInt(reader.readLine());
+        int b = Integer.parseInt(reader.readLine());
+        int maximum = Math.max(a, b);
+
+        System.out.println(max + maximum);
+    }
+
+}
+//"The max is "

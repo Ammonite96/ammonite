@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c1eac4e3-5b60-420a-b876-e7f389e18080" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1WfXX1BmInGtubkGrlwFjBNgJoR" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ammonite" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.LongSequence">
+    <configuration name="ArrayLinked10kGetSet" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.JavaRush.lvl8.lecture6.ArrayLinked10kGetSet" />
+      <module name="TestProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.JavaRush.lvl8.lecture6.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Insert10kTimeLn" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.JavaRush.lvl8.lecture6.Insert10kTimeLn" />
+      <module name="TestProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.JavaRush.lvl8.lecture6.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LongSequence" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.JavaRush.lvl8.lecture6.LongSequence" />
+      <module name="TestProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.JavaRush.lvl8.lecture6.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MapHashMapCat" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.JavaRush.lvl8.lecture3.MapHashMapCat" />
+      <module name="TestProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.JavaRush.lvl8.lecture3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TimeLine10kGet" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ru.JavaRush.lvl8.lecture6.TimeLine10kGet" />
+      <module name="TestProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.JavaRush.lvl8.lecture6.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.LongSequence" />
+        <item itemvalue="Application.ArrayLinked10kGetSet" />
+        <item itemvalue="Application.TimeLine10kGet" />
+        <item itemvalue="Application.Insert10kTimeLn" />
+        <item itemvalue="Application.MapHashMapCat" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c1eac4e3-5b60-420a-b876-e7f389e18080" name="Default Changelist" comment="" />
+      <created>1579541658478</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1579541658478</updated>
+      <workItem from="1579541663603" duration="2120000" />
+      <workItem from="1579617176124" duration="1616000" />
+      <workItem from="1579618949185" duration="9970000" />
+      <workItem from="1579697605810" duration="16241000" />
+      <workItem from="1579784434603" duration="18969000" />
+      <workItem from="1580133117620" duration="18132000" />
+      <workItem from="1580222189126" duration="12863000" />
+      <workItem from="1580314574313" duration="51000" />
+      <workItem from="1580396184083" duration="13881000" />
+      <workItem from="1580548773945" duration="15873000" />
+      <workItem from="1580643175794" duration="15242000" />
+      <workItem from="1580742575350" duration="10392000" />
+      <workItem from="1580826719503" duration="7984000" />
+      <workItem from="1580916247489" duration="8730000" />
+      <workItem from="1581003134081" duration="5008000" />
+      <workItem from="1581093053338" duration="14474000" />
+      <workItem from="1581149910891" duration="4677000" />
+      <workItem from="1581258408978" duration="9873000" />
+      <workItem from="1581349758498" duration="9492000" />
+      <workItem from="1581437117922" duration="10602000" />
+      <workItem from="1581519041716" duration="12063000" />
+      <workItem from="1581609175162" duration="7863000" />
+      <workItem from="1581695810010" duration="10475000" />
+      <workItem from="1582034805858" duration="60000" />
+      <workItem from="1582130557035" duration="1205000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ru/JavaRush/LvL7/ArrayListFixRorL.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="272" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ru/JavaRush/LvL7/ArrayListFixRorL.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="273" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ru/JavaRush/LvL7/ArrayListFixRorL.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="274" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ru/JavaRush/LvL7/ArrayListFixRorL.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="275" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ru/JavaRush/LvL7/ArrayListFixRorL.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="276" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ru/JavaRush/LvL7/ArrayListFixRorL.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="277" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ru/JavaRush/LvL7/ArrayListFixRorL.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="278" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ru/JavaRush/LvL7/ArrayListFixRorL.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="279" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ru/JavaRush/LvL7/ArrayListFixRorL.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="280" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ru/JavaRush/LvL7/ArrayListFixRorL.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="281" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ru/JavaRush/LvL7/ArrayListFixRorL.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="282" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ru/JavaRush/LvL7/ArrayListFixRorL.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="283" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ru/JavaRush/LvL7/ArrayListFixRorL.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="284" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ru/JavaRush/LvL7/ArrayListSwap.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="286" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ru/JavaRush/LvL7/ArrayListSwap.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="287" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ru/JavaRush/LvL7/ArrayListSwap.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="288" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ru/JavaRush/LvL7/ArrayListSwap.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="291" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ru/JavaRush/LvL7/ArrayListSwap.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="292" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ru/JavaRush/LvL7/ArrayListSwap.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="293" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ru/JavaRush/LvL7/ArrayListSwap.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="294" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ru/JavaRush/LvL7/ArrayListSwap.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="295" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ru/JavaRush/LvL7/ArrayListSwap.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="296" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ru/JavaRush/LvL7/ArrayListSwap.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="297" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ru/JavaRush/LvL7/ArrayListSwap.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="298" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ru/JavaRush/LvL7/ArrayListSwap.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="299" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ru/JavaRush/LvL7/ArrayListSwap.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="300" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
