@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/MyPr/MyPr.iml" filepath="$PROJECT_DIR$/MyPr/MyPr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ammonite.iml" filepath="$PROJECT_DIR$/.idea/ammonite.iml" />
+    </modules>
+  </component>
+</project>
