@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e420b558-b8e1-46cd-8f5e-f8214e4f8e87" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/TestProject/src/ru/JavaRush/lvl8/lecture8/AddManyNumbAndDeleteTenNumb.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestProject/src/Test/Test1/TestClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ammonite/ru/JavaRush/lvl8/lecture8/TwentyStrings.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ammonite/ru/JavaRush/lvl8/lecture8/TwentyStrings.class" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,8 +28,15 @@
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1Y2BZlfuFm6NXrdraP5BeqolUsx" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="JavaClassFindUsagesOptions.isSearchForTextOccurrences" value="false" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -40,21 +45,9 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Application.AddManyNumbAndDeleteTenNumb">
+  <component name="RunManager" selected="Application.TwentyStrings">
     <configuration name="AddManyNumbAndDeleteTenNumb" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.JavaRush.lvl8.lecture8.AddManyNumbAndDeleteTenNumb" />
       <module name="ammonite" />
@@ -83,8 +76,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.AddManyNumbAndDeleteTenNumb" />
         <item itemvalue="Application.TwentyStrings" />
+        <item itemvalue="Application.AddManyNumbAndDeleteTenNumb" />
       </list>
     </recent_temporary>
   </component>
@@ -106,6 +99,9 @@
       <workItem from="1582209422843" duration="884000" />
       <workItem from="1582212126972" duration="3029000" />
       <workItem from="1582221408588" duration="2331000" />
+      <workItem from="1582299891228" duration="167000" />
+      <workItem from="1582301112692" duration="163000" />
+      <workItem from="1582301438621" duration="1756000" />
     </task>
     <servers />
   </component>
@@ -124,5 +120,19 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="552" y="178" key="#Notifications" timestamp="1582301126712">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="178" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1582301126712" />
+    <state x="654" y="144" key="SettingsEditor" timestamp="1582303349206">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="654" y="144" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1582303349206" />
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1582303279329">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="656" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582303279329" />
   </component>
 </project>
