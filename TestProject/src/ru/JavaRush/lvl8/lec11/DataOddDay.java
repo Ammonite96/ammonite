@@ -1,4 +1,4 @@
-package ru.JavaRush.lvl8.lecture11;
+package ru.JavaRush.lvl8.lec11;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

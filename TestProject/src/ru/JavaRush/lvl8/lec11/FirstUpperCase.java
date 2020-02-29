@@ -1,4 +1,4 @@
-package ru.JavaRush.lvl8.lecture11;
+package ru.JavaRush.lvl8.lec11;
 
 /**
  * Написать программу, которая вводит с клавиатуры строку текста.
@@ -15,7 +15,6 @@ package ru.JavaRush.lvl8.lecture11;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 
 public class FirstUpperCase {
     public static void main(String[] args) throws IOException {

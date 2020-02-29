@@ -1,9 +1,7 @@
-package ru.JavaRush.lvl8.lecture11;
+package ru.JavaRush.lvl8.lec11;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.Arrays;
-import java.util.Collections;
 
 /**
  * Создать массив на 20 чисел.

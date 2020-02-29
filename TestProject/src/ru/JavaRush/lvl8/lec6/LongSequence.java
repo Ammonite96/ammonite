@@ -1,4 +1,4 @@
-package ru.JavaRush.lvl8.lecture6;
+package ru.JavaRush.lvl8.lec6;
 
 import java.io.BufferedReader;
 import java.io.IOException;

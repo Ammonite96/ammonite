@@ -1,14 +1,14 @@
-package ru.JavaRush.lvl8.lecture3;
+package ru.JavaRush.lvl8.lec3;
 
 import java.util.HashMap;
 import java.util.Map;
 
 /**
  * Есть коллекция Map<String, String> (реализация HashMap), туда занесли 10 различных строк.
- * Вывести на экран список ключей, каждый элемент с новой строки.
+ * Вывести на экран список значений, каждый элемент с новой строки.
  */
 
-public class MapHashMapKey {
+public class MapHashMapValue {
     public static void main(String[] args) {
         Map<String, String> map = new HashMap<>();
         map.put("Sim", "Sim");
@@ -22,15 +22,13 @@ public class MapHashMapKey {
         map.put("Gevey", "Gevey");
         map.put("Hugs", "Hugs");
 
-        printKeys(map);
+        printValues(map);
     }
 
-    public static void printKeys(Map<String, String> map) {
-
-        for (Map.Entry<String, String> pair : map.entrySet()){
-            String key = pair.getKey();
-            System.out.println(key);
+    public static void printValues(Map<String, String> map) {
+        for (Map.Entry<String, String> value : map.entrySet()){
+            String val = value.getValue();
+            System.out.println(val);
         }
     }
 }
-

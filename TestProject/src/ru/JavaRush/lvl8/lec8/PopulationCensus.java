@@ -1,4 +1,4 @@
-package ru.JavaRush.lvl8.lecture8;
+package ru.JavaRush.lvl8.lec8;
 
 import java.util.HashMap;
 import java.util.Map;

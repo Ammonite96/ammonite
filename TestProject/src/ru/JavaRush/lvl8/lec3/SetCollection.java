@@ -1,4 +1,4 @@
-package ru.JavaRush.lvl8.lecture3;
+package ru.JavaRush.lvl8.lec3;
 
 import java.util.HashSet;
 import java.util.Set;

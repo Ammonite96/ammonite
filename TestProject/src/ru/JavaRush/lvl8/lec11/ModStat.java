@@ -1,4 +1,4 @@
-package ru.JavaRush.lvl8.lecture11;
+package ru.JavaRush.lvl8.lec11;
 
 /**
  * Переставь один модификатор static, чтобы пример скомпилировался.
