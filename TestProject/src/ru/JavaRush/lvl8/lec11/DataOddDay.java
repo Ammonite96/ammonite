@@ -2,7 +2,9 @@ package ru.JavaRush.lvl8.lec11;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 /**
  * 1. Реализовать метод isDateOdd(String date) так, чтобы он возвращал true, если количество дней с начала года - нечетное число, иначе false
@@ -20,11 +22,27 @@ public class DataOddDay {
     }
 
     public static boolean isDateOdd(String date) {
-        DateFormat format = new SimpleDateFormat("MMMMM d yyyy");
-        Date day = new Date(date);
-        if (day.getDate() % 2 == 0)
+        Date yearStartTime = new Date(date);
+        yearStartTime.setHours(0);
+        yearStartTime.setMinutes(0);
+        yearStartTime.setSeconds(0);
+
+        yearStartTime.setDate(1);      // первое число
+        yearStartTime.setMonth(0);     // месяц январь, нумерация для месяцев 0-11
+
+        Date currentTime = new Date(date);
+        long msTimeDistance = currentTime.getTime() - yearStartTime.getTime();
+        long msDay = 24 * 60 * 60 * 1000;  //сколько миллисекунд в одних сутках
+
+        int dayCount = (int) (msTimeDistance / msDay); //количество целых дней
+
+        if (dayCount % 2 != 0)
             return false;
         else
             return true;
     }
 }
+
+/*
+
+ */
