@@ -2,6 +2,7 @@ package ru.JavaRush.lvl8.lec11;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 
 /**
  * Задача: Введи с клавиатуры 20 слов и выведи их в алфавитном порядке. Каждое слово - с новой строки.
@@ -24,14 +25,12 @@ public class AlgorithmTask {
 
     public static void sort(String[] array) {
         //напишите тут ваш код
-        for (int i = 0; i < array.length; i++) {
-            for (int j = i + 1; j < array.length; j++) {
-                if (array[j].equals(array[i])) {
-                    String t = array[i];
-                    array[i] = array[j];
-                    array[j] = t;
-                    isGreaterThan(array[j], array[i]);
-                }
+        Arrays.sort(array);
+        for (int i = array.length-1; i > 0 ; i--){
+            for (int j = 0; j < i; j++) {
+                String a = array[i];
+                String b = array[j];
+                isGreaterThan(a, b);
             }
         }
     }
