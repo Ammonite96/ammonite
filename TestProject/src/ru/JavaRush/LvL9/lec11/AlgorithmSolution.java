@@ -51,13 +51,23 @@ public class AlgorithmSolution {
     }
 
     public static void sort(String[] array) {
-        Arrays.sort(array);
-        for (int i = 0; i < array.length; i++){
-            for(int j = i+1; j < array.length; j++) {
-                String a = array[i];
-                String b = array[j];
-                isGreaterThan(a, b);
-                isNumber(a);
+
+        for (int i = 0; i < array.length; i++) {
+            for (int j = i+1; j < array.length; j++) {
+                if (!isNumber(array[i]) && !isNumber(array[j])){
+                    if (isGreaterThan(array[i], array[j])){
+                        String b = array[j];
+                        array[j] = array[i];
+                        array[i] = b;
+                    }
+                }
+                if (isNumber(array[i]) && isNumber(array[j])){
+                    if (Integer.parseInt(array[i]) < Integer.parseInt(array[j])){
+                        String b = array[j];
+                        array[j] = array[i];
+                        array[i] = b;
+                    }
+                }
             }
         }
     }
