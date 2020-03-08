@@ -46,27 +46,19 @@ public class NumberOfLetters {
         }
         Collections.sort(strToChar);
 
-        Map<Character, Integer> numChar = new TreeMap<>();
-        Integer value = 0;
         for (int i = 0; i < alphabet.size(); i++){
-           Character charAlphabet = alphabet.get(i);
-            numChar.put(charAlphabet, value);
-           for (int j = 0; j < strToChar.size(); j++){
-               char ch = strToChar.get(j);
-               if (charAlphabet != ch)
-                   value = 0;
-               if (charAlphabet == ch){
-                   Character key = charAlphabet;
-                   value ++;
-                   numChar.put(charAlphabet, value);  //Ошибка где - то!!!
-               }
-           }
-        }
-
-        for (Map.Entry<Character, Integer> pair : numChar.entrySet()){
-            Character key = pair.getKey();
-            Integer value1 = pair.getValue();
-            System.out.println(key + " " + value1);
+            char abcChar = alphabet.get(i);
+            int count = 0;
+            for (int j = 0; j < strToChar.size(); j++){
+                char ch = strToChar.get(j);
+                if (abcChar != ch){
+                    count = 0;
+                }
+                if (abcChar == ch){
+                    count++;
+                    System.out.println(alphabet.get(i) + " " + count);
+                }
+            }
         }
     }
 }
@@ -93,10 +85,50 @@ public class NumberOfLetters {
 ввв
 гггг
 ддддд
-ееееее
+ёёёёёё
 жжжжжжж
 зззззззз
 иииииииии
 кккккккккк
+
+ */
+
+
+/*
+
+ArrayList<Character> strToChar = new ArrayList<>();
+        for (int i = 0; i < list.size(); i++){
+            String str = list.get(i);
+            for (int j = 0; j < str.length(); j++ ) {
+                char[] strChar = str.toCharArray();
+                char ch = strChar[j];
+                strToChar.add(ch);
+            }
+        }
+        Collections.sort(strToChar);
+
+        Map<Character, Integer> numChar = new TreeMap<>();
+        Integer value = 0;
+        for (int i = 0; i < alphabet.size(); i++){
+           Character charAlphabet = alphabet.get(i);
+            //numChar.put(charAlphabet, null);
+           for (int j = 0; j < strToChar.size(); j++){
+               char ch = strToChar.get(j);
+               if (charAlphabet != ch)
+                   value = 0;
+               if (charAlphabet == ch){
+                   value ++;
+                   numChar.put(charAlphabet, value);
+               }
+           }
+        }
+
+        for (Map.Entry<Character, Integer> pair : numChar.entrySet()){
+            Character key = pair.getKey();
+            Integer value1 = pair.getValue();
+            if (value1 == null)
+                value1 = 0;
+            System.out.println(key + " " + value1);
+        }
 
  */
