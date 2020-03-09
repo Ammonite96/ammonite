@@ -36,9 +36,9 @@ public class NumberOfLetters {
         }
 
         ArrayList<Character> strToChar = new ArrayList<>();
-        for (int i = 0; i < list.size(); i++){
+        for (int i = 0; i < list.size(); i++) {
             String str = list.get(i);
-            for (int j = 0; j < str.length(); j++ ) {
+            for (int j = 0; j < str.length(); j++) {
                 char[] strChar = str.toCharArray();
                 char ch = strChar[j];
                 strToChar.add(ch);
@@ -46,20 +46,23 @@ public class NumberOfLetters {
         }
         Collections.sort(strToChar);
 
-        for (int i = 0; i < alphabet.size(); i++){
-            char abcChar = alphabet.get(i);
-            int count = 0;
-            for (int j = 0; j < strToChar.size(); j++){
+        Map<Character, Integer> numChar = new TreeMap<>();
+        Integer value = 0;
+        for (int i = 0; i < alphabet.size(); i++) {
+            Character charAlphabet = alphabet.get(i);
+            numChar.put(charAlphabet, 0);
+            for (int j = 0; j < strToChar.size(); j++) {
                 char ch = strToChar.get(j);
-                if (abcChar != ch){
-                    count = 0;
-                }
-                if (abcChar == ch){
-                    count++;
-                    System.out.println(alphabet.get(i) + " " + count);
+                if (charAlphabet != ch)
+                    value = 0;
+                if (charAlphabet == ch) {
+                    value++;
+                    numChar.put(charAlphabet, value);
                 }
             }
         }
+        for (int i = 0 ; i < alphabet.size(); i++)
+            System.out.println(alphabet.get(i) + " " + numChar.get(alphabet.get(i)));
     }
 }
 
