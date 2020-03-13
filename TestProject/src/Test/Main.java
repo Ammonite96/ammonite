@@ -13,5 +13,8 @@ public class Main {
         toyota.setModel("Corolla");
         System.out.println("Max Speed: " +toyota.getMaxSpeed() + " " + "Model: " + toyota.getModel() + " " + toyota.getBody());
         System.out.println(toyota.driveForward());
+
+        Toyota toyota1 = (Toyota) new Car();
+        System.out.println(toyota1.getModel());
     }
 }
