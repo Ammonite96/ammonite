@@ -37,3 +37,4 @@ public class AlgorithmTaskLastSolution10LvL {
         Arrays.sort(array);
     }
 }
+// quest 
