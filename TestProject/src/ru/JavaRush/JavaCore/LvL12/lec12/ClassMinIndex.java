@@ -22,9 +22,11 @@ public class ClassMinIndex {
 
         int min = array[0];
         int index = 0;
-        for (int i = 0; i < array.length; i++){ // ДОДЕЛАТЬ ЗАДАЧУ
-            if (min == array[i])
+        for (int i = 0; i < array.length; i++){
+            if (array[i] < min) {
+                min = array[i];
                 index = i;
+            }
         }
 
         return new Pair<Integer, Integer>(min, index);
