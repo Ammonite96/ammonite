@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * 1. Ввести имя файла с консоли.
@@ -29,22 +30,29 @@ import java.util.ArrayList;
 
 public class EvenNumberInFile {
     public static void main(String[] args) {
-        try{
+        try {
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
             String nameFile = reader.readLine();
-            FileInputStream input = new FileInputStream(nameFile);
-
-
-            ArrayList<Integer> num = new ArrayList<>();
-            while (input.available()>0){
-                int n = Integer.parseInt(String.valueOf(input));
-                num.add(n);
+            BufferedReader r = new BufferedReader(new InputStreamReader(new FileInputStream(nameFile)));
+            ArrayList<Integer> numbers = new ArrayList<>();
+            String str = null;
+            while (true) {
+                str = r.readLine();
+                if (str == null)
+                    break;
+                int num = Integer.parseInt(str);
+                numbers.add(num);
+            }
+            r.close();
+            Collections.sort(numbers);
+            for (int i = 0; i < numbers.size(); i++) {
+                if (numbers.get(i) % 2 == 0)
+                    System.out.println(numbers.get(i));
             }
 
-        } catch (IOException io){
-            System.out.println(io.getStackTrace());
+        } catch (IOException io) {
+            System.out.println(io.getMessage());
         }
-
     }
 }
 
