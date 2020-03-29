@@ -16,7 +16,7 @@ public class MiniMiniMusicApp {
             Track track = seq.createTrack();    // Запрашиваем трек у последовательности. Помним, что трек содержится внутри последовательности, а Midi-данные - в треке
 
             ShortMessage a = new ShortMessage();
-            a.setMessage(144, 1, 44, 100);  // Помещаем в трек Миди-события
+            a.setMessage(144, 1, 65, 100);  // Помещаем в трек Миди-события
             MidiEvent noteOn = new MidiEvent(a, 1);
             track.add(noteOn);
 
