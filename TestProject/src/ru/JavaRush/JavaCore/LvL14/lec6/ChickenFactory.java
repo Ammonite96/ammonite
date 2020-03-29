@@ -5,7 +5,7 @@ package ru.JavaRush.JavaCore.LvL14.lec6;
  * 1. Создать класс Hen.
  * 1.1. Сделать его абстрактным.
  * 1.2. Добавить в класс абстрактный метод int getCountOfEggsPerMonth().
- * 1.3. Добавить в класс метод String getDescription(), который возвращает строку "Я - курица.".
+ * 1.3. Добавить в класс метод String getDescription(), который возвращает строку "RussianHen".
  * 2. Создать класс RussianHen, который наследуется от Hen.
  * 3. Создать класс UkrainianHen, который наследуется от Hen.
  * 4. Создать класс MoldovanHen, который наследуется от Hen.
@@ -23,21 +23,28 @@ package ru.JavaRush.JavaCore.LvL14.lec6;
  * 9. Все созданные вами классы должны быть в отдельных файлах.
  */
 
-/*
+
 public class ChickenFactory {
     public static void main(String[] args) {
-        Hen hen = HenFactory.getHen(Country.BELARUS);
+        Hen hen = HenFactory.getHen(Country.UKRAINE);
         hen.getCountOfEggsPerMonth();
+        System.out.println(hen.getDescription());
     }
 
     static class HenFactory {
 
         static Hen getHen(String country) {
             Hen hen = null;
-            //напишите тут ваш код
-            return hen;
+            if (country.equals(Country.BELARUS))
+                return hen = new BelarusianHen();
+            else if (country.equals(Country.MOLDOVA))
+                return hen = new MoldovanHen();
+            else if (country.equals(Country.UKRAINE))
+                return hen = new UkrainianHen();
+            else
+            return hen = new RussianHen();
         }
     }
 }
 
- */
+
