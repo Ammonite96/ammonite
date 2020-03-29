@@ -23,6 +23,7 @@ package ru.JavaRush.JavaCore.LvL14.lec6;
  * 9. Все созданные вами классы должны быть в отдельных файлах.
  */
 
+/*
 public class ChickenFactory {
     public static void main(String[] args) {
         Hen hen = HenFactory.getHen(Country.BELARUS);
@@ -38,3 +39,5 @@ public class ChickenFactory {
         }
     }
 }
+
+ */

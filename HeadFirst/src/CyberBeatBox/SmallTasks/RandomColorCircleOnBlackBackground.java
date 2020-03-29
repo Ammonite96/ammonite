@@ -13,6 +13,6 @@ public class RandomColorCircleOnBlackBackground extends JPanel {       //Рис�
 
         Color randomColor = new Color(red, green, blue); // цвет задаётся в RGB
         g.setColor(randomColor);
-        g.fillOval(70, 70, 100, 100);
+        g.fillOval(50, 100, 50, 50);
     }
 }
