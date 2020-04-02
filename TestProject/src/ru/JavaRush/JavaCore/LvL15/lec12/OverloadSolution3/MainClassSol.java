@@ -1,4 +1,4 @@
-package ru.JavaRush.JavaCore.LvL15.lec12.OverloadSolution;
+package ru.JavaRush.JavaCore.LvL15.lec12.OverloadSolution3;
 
 import java.math.BigDecimal;
 

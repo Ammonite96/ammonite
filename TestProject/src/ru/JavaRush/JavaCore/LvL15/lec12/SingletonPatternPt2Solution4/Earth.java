@@ -1,0 +1,14 @@
+package ru.JavaRush.JavaCore.LvL15.lec12.SingletonPatternPt2Solution4;
+
+public class Earth implements Planet {
+    private static Earth instance;
+
+    private Earth() {
+    }
+
+    public static Earth getInstance(){
+        if (instance == null)
+            instance = new Earth();
+        return instance;
+    }
+}
