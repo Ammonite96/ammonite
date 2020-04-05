@@ -19,7 +19,7 @@ public class Cat extends Animal {
 
     @Override
     public void voice() {
-        super.voice();
-        System.out.print(" " + "Кот" + " ");
+        System.out.println("Мяу");
+        System.out.print("Кот" + " ");
     }
 }

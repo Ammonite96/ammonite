@@ -20,29 +20,32 @@ public class Animal {
     public void setAge(int age) {
         if (age <= 0)
             this.age = 1;
+        else this.age = age;
     }
 
     public void setWeight(int weight) {
         if (weight <= 0)
             this.weight = 1;
+        else this.weight = weight;
     }
 
     public Animal() {
+        System.out.println("не опознаное животное");
     }
 
     public Animal(int age) {
-        this.setAge(age);
+        setAge(age);
     }
 
     public Animal(int age, String name) {
-        this.setAge(age);
+        setAge(age);
         this.name = name;
     }
 
     public Animal(int age, String name, int weight) {
-        this.setAge(age);
+        setAge(age);
         this.name = name;
-        this.weight = weight;
+        setWeight(weight);
     }
 
 

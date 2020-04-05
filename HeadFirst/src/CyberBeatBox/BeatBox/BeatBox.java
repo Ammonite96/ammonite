@@ -5,6 +5,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.*;
 import java.util.ArrayList;
 
 public class BeatBox {
@@ -15,6 +16,7 @@ public class BeatBox {
     Sequence sequence;
     Track track;
     JFrame theFrame;
+    boolean[] checkboxState; // массив для хранения состояния каждого флажка. Используется для сохранения и открытия шаблона
 
     String[] instrumentNames = {"Bass Drum", "Closed Hi-Hat", "Open Hi-Hat", "Acoustic Snare",
             "Crash Cymbal", "Hand Clap", "High Tom", "Hi Bongo", "Maracas", "Whistle", "Low Conga", "Cowbell",
@@ -52,6 +54,14 @@ public class BeatBox {
         downTempo.addActionListener(new MyDownTempoListener());
         buttonBox.add(downTempo);
 
+        JButton saveButton = new JButton("Save");
+        saveButton.addActionListener(new MySendListener());
+        buttonBox.add(saveButton);
+
+        JButton openButton = new JButton("Open Pattern");
+        openButton.addActionListener(new MyReadInListener());
+        buttonBox.add(openButton);
+
         Box nameBox = new Box(BoxLayout.Y_AXIS);
         for (int i = 0; i < 16; i++){
             nameBox.add(new Label(instrumentNames[i]));
@@ -80,6 +90,7 @@ public class BeatBox {
         theFrame.setBounds(50,50,300,300);
         theFrame.pack();
         theFrame.setVisible(true);
+        theFrame.setLocationRelativeTo(null);
     } // закрываем метод
 
     public void setUpMidi() { // Обычный Миди-код для получения синтезатора, сиквенсера и дорожки.
@@ -181,4 +192,58 @@ public class BeatBox {
         }
         return event;
     } // close method
+
+    public class MySendListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            checkboxState = new boolean[256];
+
+            for (int i = 0; i < 256; i++){
+                JCheckBox check = (JCheckBox) checkBoxList.get(i);
+                if (check.isSelected())
+                    checkboxState[i] = true;
+            }
+            JFileChooser fileSave = new JFileChooser();
+            fileSave.showOpenDialog(theFrame);
+            saveFile (fileSave.getSelectedFile());
+        }
+    }
+
+    private void saveFile(File file){
+        try{
+            ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream(file));
+            os.writeObject(checkboxState);
+        } catch (Exception ex){
+            ex.printStackTrace();
+        }
+    }
+
+    public class MyReadInListener implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            JFileChooser fileOpen = new JFileChooser();
+            fileOpen.showOpenDialog(theFrame);
+            loadFile (fileOpen.getSelectedFile());
+            sequencer.stop();
+            buildTrackAndStart();
+        }
+    }
+
+    private void loadFile(File file){
+        checkboxState = null;
+        try {
+            ObjectInputStream is = new ObjectInputStream(new FileInputStream(file));
+            checkboxState = (boolean[]) is.readObject();
+        } catch (Exception ex){ex.printStackTrace();}
+
+        for (int i = 0; i < 256; i++){
+            JCheckBox check = (JCheckBox) checkBoxList.get(i);
+            if (checkboxState[i])
+                check.setSelected(true);
+            else
+                check.setSelected(false);
+        }
+    }
 } // Close BeatBox Class

@@ -1,7 +1,10 @@
 package Test.Test1;
 
 public class Dog extends Animal {
+
+
     public Dog() {
+        System.out.println("Не опознаная собака");
     }
 
     public Dog(int age) {
@@ -14,5 +17,11 @@ public class Dog extends Animal {
 
     public Dog(int age, String name, int weight) {
         super(age, name, weight);
+    }
+
+    @Override
+    public void voice() {
+        System.out.println("Гав");
+        System.out.print("Собака" + " ");
     }
 }
