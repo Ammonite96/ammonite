@@ -52,6 +52,5 @@ public class Animal {
 
     public void voice(){
         System.out.println("подаёт голос");
-        System.out.println("");
     }
 }
