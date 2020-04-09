@@ -1,8 +1,10 @@
 package ru.JavaRush.JavaCore.LvL16.lec13;
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 /**
  * 1. Разберись, что делает программа.
@@ -42,6 +44,7 @@ public class Thread9MainClass {
         ReadFileInterface f = new ReadFileThread();
         f.setFileName(fileName);
         f.start();
+        f.join();
         //add your code here - добавьте код тут
         System.out.println(f.getFileContent());
     }
@@ -59,21 +62,33 @@ public class Thread9MainClass {
 
     //add your code here - добавьте код тут
     public static class ReadFileThread extends Thread implements ReadFileInterface{
-
+        ArrayList<String> strings = new ArrayList<>();
+        String file;
+        String result = "";
         @Override
         public void run() {
+            try{
+                BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
+                String str;
+                while ((str = reader.readLine()) != null){
+                    strings.add(str);
+                }
+                reader.close();
 
+            } catch (IOException io){}
         }
 
         @Override
         public void setFileName(String fullFileName) {
-            firstFileName = fullFileName;
-            secondFileName = fullFileName;
+           file = fullFileName;
         }
 
         @Override
         public String getFileContent() {
-          return null;
+            for (int i = 0; i < strings.size(); i++){
+                result = result + strings.get(i) + " ";
+            }
+            return result;
         }
     }
 }
