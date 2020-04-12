@@ -30,7 +30,7 @@ public class Animal {
     }
 
     public Animal() {
-        System.out.println("не опознаное животное");
+        System.out.println("не опознаное животноее");
     }
 
     public Animal(int age) {
