@@ -11,6 +11,7 @@ public class Interrupt2Class {
         TestThread testThread = new TestThread();
         testThread.start();
         testThread.interrupt();
+        Thread.sleep(1000);
     }
 
     //Add your code below - добавь код ниже
