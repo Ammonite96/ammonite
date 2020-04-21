@@ -10,7 +10,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class QuizCardBuilder {
+public class
+QuizCardBuilder {
     private JTextArea question;
     private JTextArea answer;
     private ArrayList<QuizCard> cardList;

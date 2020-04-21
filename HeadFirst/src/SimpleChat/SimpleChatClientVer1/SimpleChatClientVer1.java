@@ -1,4 +1,4 @@
-package SimpleChat;
+package SimpleChat.SimpleChatClientVer1;
 
 import javax.swing.*;
 import java.awt.*;
@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-public class SimplechatClientVer1 {
+public class SimpleChatClientVer1 {
     JTextField outgoing;
     PrintWriter writer;
     Socket sock;
@@ -51,6 +51,6 @@ public class SimplechatClientVer1 {
     }
 
     public static void main(String[] args) {
-        new SimplechatClientVer1().go();
+        new SimpleChatClientVer1().go();
     }
 }
