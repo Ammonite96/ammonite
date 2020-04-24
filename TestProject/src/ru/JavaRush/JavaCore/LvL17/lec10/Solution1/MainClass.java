@@ -47,7 +47,6 @@ public class MainClass {
     }
 
     public static void main(String[] args) throws ParseException {
-        System.out.println(allPeople.size());
         if ("-c".equals(args[0])) {
             if (args[2].equals("м")) {
                 allPeople.add(Person.createMale(args[1], dateFormat.parse(args[3])));
@@ -83,5 +82,6 @@ public class MainClass {
         }
 
         System.out.println(allPeople.size());
+        System.out.println(allPeople.get(Integer.parseInt(args[3])));
     }
 }
