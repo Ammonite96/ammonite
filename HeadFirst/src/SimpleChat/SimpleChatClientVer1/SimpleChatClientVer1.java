@@ -2,11 +2,12 @@ package SimpleChat.SimpleChatClientVer1;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
+
+import static java.awt.event.KeyEvent.VK_ENTER;
 
 public class SimpleChatClientVer1 {
     JTextField outgoing;
@@ -17,6 +18,19 @@ public class SimpleChatClientVer1 {
         JFrame frame = new JFrame("Simple Chat Client");
         JPanel mainPanel = new JPanel();
         outgoing = new JTextField(20);
+
+        outgoing.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyCode() == VK_ENTER){
+                    writer.println(outgoing.getText());
+                    writer.flush();
+                    outgoing.setText("");
+                    outgoing.requestFocus();
+                }
+            }
+        });
+
         JButton sendButton = new JButton("Send");
         sendButton.addActionListener(new SendButtonListener());
         mainPanel.add(outgoing);
