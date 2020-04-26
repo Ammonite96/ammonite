@@ -27,7 +27,6 @@ public class MainClass {
                 break;
             }
         }
-
         for (int i = 0; i < values.length; i++){
             System.out.println(values[i]);
         }
@@ -58,7 +57,6 @@ public class MainClass {
                     incrementCount();
                     values[getCount()]++;
                 }
-
                 try {
                     Thread.sleep(1);
                 } catch (InterruptedException e) {
