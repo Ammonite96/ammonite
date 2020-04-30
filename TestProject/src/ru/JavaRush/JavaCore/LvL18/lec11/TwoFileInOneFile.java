@@ -10,27 +10,25 @@ import java.io.*;
  */
 
 public class TwoFileInOneFile {
-    private void systemIn () throws FileNotFoundException {
-        String[] nameFile = {"test", "test1", "test2"};
-        for (String s : nameFile){
-            String string = s;
-            byte[] bytes = string.getBytes();
-            InputStream inputStream = new ByteArrayInputStream(bytes);
-            System.setIn(inputStream);
-        }
-    }
-
     public static void main(String[] args) throws IOException {
-        TwoFileInOneFile twoFileInOneFile = new TwoFileInOneFile();
-        twoFileInOneFile.systemIn();
-
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String file = reader.readLine();
         String file1 = reader.readLine();
         String file2 = reader.readLine();
 
-        System.out.println(file);
-        System.out.println(file1);
+        BufferedOutputStream outputStream = new BufferedOutputStream(new FileOutputStream(file, true));
+        BufferedInputStream inputStream = new BufferedInputStream(new FileInputStream(file1));
+        BufferedInputStream inputStream1 = new BufferedInputStream(new FileInputStream(file2));
 
+        int charN;
+        while ((charN = inputStream.read()) != -1){
+            outputStream.write(charN);
+        }
+        while ((charN = inputStream1.read()) != -1){
+            outputStream.write(charN);
+        }
+        outputStream.close();
+        inputStream.close();
+        inputStream1.close();
     }
 }
