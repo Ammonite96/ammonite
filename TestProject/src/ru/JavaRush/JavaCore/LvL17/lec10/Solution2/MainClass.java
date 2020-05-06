@@ -1,6 +1,5 @@
 package ru.JavaRush.JavaCore.LvL17.lec10.Solution2;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
