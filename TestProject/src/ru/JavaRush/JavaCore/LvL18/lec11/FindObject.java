@@ -4,10 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 /**
  * Читайте с консоли имена файлов, пока не будет введено слово "exit".
@@ -26,12 +23,12 @@ public class FindObject {
         while (!(nameFile = reader.readLine()).equals("exit")){
             new ReadThread(nameFile);
         }
-        System.out.println(nameFile);
+        resultMap.forEach((s, integer) -> System.out.println(s + " " + integer));
     }
 
     public static class ReadThread extends Thread {
         ArrayList<Integer> charList = new ArrayList<>();
-        Map<Integer, Integer> charMap = new TreeMap<>();
+        Map<Integer, Integer> charMap = new HashMap<>();
         String file;
         int count = 0;
 
@@ -62,6 +59,11 @@ public class FindObject {
                     count = 0;
                 }
             }catch (IOException io) {io.getStackTrace();}
+
+            int maxKey = charMap.entrySet()
+                    .stream()
+                    .max((o1, o2) -> o1.getValue().compareTo(o2.getValue())).get().getKey();
+            resultMap.put(file, maxKey);
         }
     }
 }
