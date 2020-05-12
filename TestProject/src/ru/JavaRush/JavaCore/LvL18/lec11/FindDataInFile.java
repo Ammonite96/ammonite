@@ -31,14 +31,11 @@ public class FindDataInFile {
         while ((strLine = fileReader.readLine()) != null){
             if (strLine.startsWith((args[0]+" "))){
                 System.out.println(strLine);
-                break;
-            // Либо моё решение stringList.add(strLine);   И далее через цикл for
+                break;      // Либо моё решение stringList.add(strLine);   И далее через цикл for
             }
         }
         reader.close();
         fileReader.close();
-
-
     }
 }
 

@@ -1,6 +1,5 @@
 package ru.JavaRush.JavaCore.LvL18.lec11;
 
-import javax.swing.*;
 import java.io.*;
 
 /**
