@@ -20,9 +20,17 @@ public class CopyPasteFile {
         // Создаем поток-записи-байт-в-файл
         FileOutputStream outputStream = new FileOutputStream("test1");
 
+        byte[] buffer1 = new byte[inputStream.available()];
+        System.out.println(buffer1.length);
+
+        for (byte b : buffer1){
+            System.out.println(b);
+        }
+
         if (inputStream.available() > 0) {
             //читаем весь файл одним куском
             byte[] buffer = new byte[inputStream.available()];
+            System.out.println(buffer.length);
             int count = inputStream.read(buffer);
             outputStream.write(buffer, 0, count);
         }
