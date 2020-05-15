@@ -1,10 +1,7 @@
 package ru.JavaRush.JavaCore.LvL18.lec11;
 
-import javax.crypto.*;
 import java.io.*;
-import java.security.InvalidKeyException;
-import java.security.Key;
-import java.security.NoSuchAlgorithmException;
+
 
 /**
  * Придумать механизм шифровки/дешифровки.
@@ -20,62 +17,34 @@ import java.security.NoSuchAlgorithmException;
  */
 
 public class CryptographyFile {
-    KeyGenerator keygen;
-    {
-        try {
-            keygen = KeyGenerator.getInstance("AES");
-            keygen.init(256);
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        }
-    }
-    Key key = keygen.generateKey();
-    Cipher cipher;
 
-    {
-        try {
-            cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
-            cipher.init(Cipher.ENCRYPT_MODE, key);
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        } catch (NoSuchPaddingException e) {
-            e.printStackTrace();
-        } catch (InvalidKeyException e) {
-            e.printStackTrace();
-        }
-    }
+    private static byte key = 10;
 
-    public static void main(String[] args) throws Exception {
-        CryptographyFile cryptographyFile = new CryptographyFile();
-        cryptographyFile.Encrypt("test", "test1");
-        cryptographyFile.Decrypt("test1", "test2");
-    }
+    public static void main(String[] args) throws IOException {
+        if(args.length < 3) return;
 
-    private void Encrypt(String nameFile, String nameOutFile) throws Exception {
-        BufferedInputStream inputStream = new BufferedInputStream(new FileInputStream(nameFile));
-        byte[] fileByte = new byte[inputStream.available()];
+        FileInputStream inputStream = new FileInputStream(args[1]);
+        FileOutputStream outputStream = new FileOutputStream(args[2]);
+
         while (inputStream.available() > 0){
-            int b = inputStream.read(fileByte);
+            byte[] bytes = new byte[inputStream.available()];
+            inputStream.read(bytes);
+           // System.out.println(Arrays.toString(crypt(bytes)));
+            outputStream.write(crypt(bytes));
         }
-        byte[] encrypt = cipher.doFinal(fileByte);
-        BufferedOutputStream outputStream = new BufferedOutputStream(new FileOutputStream(nameOutFile));
-        outputStream.write(encrypt, 0, encrypt.length);
+
         inputStream.close();
         outputStream.close();
 
     }
 
-    private void Decrypt(String nameFile, String nameOutFile) throws Exception {
-        BufferedInputStream inputStream = new BufferedInputStream(new FileInputStream(nameFile));
-        byte[] isByte = new byte[inputStream.available()];
-        while (inputStream.available() > 0){
-            int b = inputStream.read(isByte);
-        }
-        byte[] decrypt = cipher.doFinal(isByte);
-        BufferedOutputStream outputStream = new BufferedOutputStream(new FileOutputStream(nameOutFile));
-        outputStream.write(decrypt, 0, decrypt.length);
+    private static byte[] crypt(byte[] data){
+        byte[] res = new byte[data.length];
 
-        inputStream.close();
-        outputStream.close();
+        for(int i = 0; i < data.length; i++){
+            res[i] = (byte)(data[i] ^ key);
+        }
+
+        return res;
     }
 }
