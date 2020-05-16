@@ -1,5 +1,9 @@
 package ru.JavaRush.JavaCore.LvL18.lec11.PriceListSolution;
 
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Locale;
+
 /**
  *CrUD для таблицы внутри файла.
  * Считать с консоли имя файла для операций CrUD.
@@ -26,22 +30,45 @@ package ru.JavaRush.JavaCore.LvL18.lec11.PriceListSolution;
 
 public class Item {
 
-    private int id;
-    private double price;
-    private int quantity;
-    private String productName;
+    private String fileName;
+    private ArrayList<String> data = new ArrayList<>();
 
-    public Item(int id, String productName, double price, int quantity) {
-        this.id = id;
-        this.price = price;
-        this.quantity = quantity;
-        this.productName = productName;
+    public Item(String fileName) throws IOException {
+        this.fileName = fileName;
+        String bufStr;
+        BufferedReader fileIn = new BufferedReader(new FileReader(fileName));
+        while ((bufStr = fileIn.readLine()) != null){
+            data.add(bufStr);
+        }
+        fileIn.close();
     }
 
-    @Override
-    public String toString(){
-        String formatPrice = String.format("%-8.2f", price);
-        String formatQuantity = String.format("%-4d", quantity);
-        return String.format("%-8d%-30.30s%-8.8s%-4.4s\n",id, productName, formatPrice, formatQuantity);
+    public int MaxID(){
+        int max = 0;
+        for (String s : data) {
+            int tmp = Integer.parseInt(s.substring(0, 8).trim());
+            if (max < tmp) max = tmp;
+        }
+        return max;
+    }
+
+    public String FormatRec(int ID, String productName, double price, int quantity){
+        return String.format(Locale.ENGLISH, "%-8d%-30.30s%-8.2f%-4d", ID, productName, price, quantity);
+    }
+
+    public void NewRec(String productName, double price, int quantity) {
+        data.add(FormatRec(MaxID() + 1, productName, price, quantity));
+    }
+
+    public void WriteBD() throws IOException {
+        StringBuilder sb = new StringBuilder(data.size());
+        for (String s : data) {
+            sb.append(s);
+            sb.append("\r\n");
+        }
+        BufferedWriter fileOut = new BufferedWriter(new FileWriter(fileName));
+        fileOut.write(sb.toString());
+        fileOut.close();
     }
 }
+

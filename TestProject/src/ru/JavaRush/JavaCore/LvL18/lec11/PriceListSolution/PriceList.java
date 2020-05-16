@@ -1,5 +1,9 @@
 package ru.JavaRush.JavaCore.LvL18.lec11.PriceListSolution;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.InputStreamReader;
+
 /**
  *CrUD для таблицы внутри файла.
  * Считать с консоли имя файла для операций CrUD.
@@ -26,6 +30,16 @@ package ru.JavaRush.JavaCore.LvL18.lec11.PriceListSolution;
 
 public class PriceList {
     public static void main(String[] args) throws Exception {
-
+        if (args.length != 4) return;
+        BufferedReader rcon = new BufferedReader(new InputStreamReader(System.in));
+        String fileName = rcon.readLine();
+        rcon.close();
+        File f = new File(fileName);
+        if (!f.isFile()) f.createNewFile();
+        if (args[0].equals("-c")) {
+            Item item = new Item(fileName);
+            item.NewRec(args[1], Double.parseDouble(args[2]), Integer.parseInt(args[3]));
+            item.WriteBD();
+        }
     }
 }
