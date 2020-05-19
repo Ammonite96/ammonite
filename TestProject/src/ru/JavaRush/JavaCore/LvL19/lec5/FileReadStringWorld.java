@@ -4,8 +4,6 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -24,12 +22,18 @@ public class FileReadStringWorld {
         FileReader fileReader = new FileReader(nameFile);
         Scanner scanner = new Scanner(fileReader);
 
-        ArrayList<String> list = new ArrayList<>();
+        int count = 0;
         while (scanner.hasNext()) {
-            String str = scanner.nextLine();
-            list.add(str);
+            String[] str = scanner.nextLine().split("[^A-Za-zА-Яа-я]+");
+            for (int i = 0; i < str.length; i++){
+                String string = str[i];
+                if (string.equals("world"))
+                    count++;
+            }
         }
-        
+        fileReader.close();
+        scanner.close();
+        System.out.println(count);
     }
 }
 /*
