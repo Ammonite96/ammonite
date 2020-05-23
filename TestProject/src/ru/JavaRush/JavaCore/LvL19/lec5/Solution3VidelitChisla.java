@@ -1,8 +1,8 @@
 package ru.JavaRush.JavaCore.LvL19.lec5;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Считать с консоли 2 имени файла.
@@ -26,25 +26,18 @@ public class Solution3VidelitChisla {
         BufferedReader fileReader = new BufferedReader(new FileReader(nameFile));
         BufferedWriter fileWrite = new BufferedWriter(new FileWriter(nameFile1));
 
-        ArrayList<Integer> numList = new ArrayList<>();
         while (fileReader.ready()){
             String dataFile = fileReader.readLine();
-            String[] buffer = dataFile.split("(\\s)|(([A-Za-zА-Яа-я]+\\d+))|(\\d+[A-Za-zА-Яа-я]+)|([A-Za-zА-Яа-я ]+)|(\\n\\t\\r\\f)");
-            System.out.println(buffer.length);
-            for (int i = 0; i < buffer.length; i++ ){
-                String num = buffer[i];
-                System.out.println(num);
-               // int m = Integer.parseInt(num);
-                //numList.add(m);
+            Pattern pattern = Pattern.compile("\\b[0-9]+\\b");
+            Matcher matcher = pattern.matcher(dataFile);
+            while (matcher.find()) {
+                String strNum = matcher.group();
+                fileWrite.write(strNum+" ");
             }
-        }
-
-        for (Integer i : numList){
-            fileWrite.write(i);
-            System.out.println(i);
         }
         fileReader.close();
         fileWrite.close();
     }
 }
 //(\s)|(([A-Za-zА-Яа-я]+\d+))|(\d+[A-Za-zА-Яа-я]+)|([A-Za-zА-Яа-я ]+)|(\n\t\r\f)
+// \b[0-9]+\b
