@@ -39,14 +39,20 @@ public class MainClass {
         }
         fileReader.close();
 
-        System.out.println(outputData.size());
-        outputData.forEach((s, aDouble) -> System.out.println(s + " " + aDouble));
+        Double maxValueInMap = (Collections.max(outputData.values()));
+        for (Map.Entry<String, Double> entry : outputData.entrySet()) {
+            if (entry.getValue().equals(maxValueInMap)) {
+                System.out.println(entry.getKey());
+            }
+        }
+    }
+}
 
-        Double maxValueInMap = (Collections.max(outputData.values()));  // This will return max value in the Hashmap
+/*
+Double maxValueInMap = (Collections.max(outputData.values()));  // This will return max value in the Hashmap
         for (Map.Entry<String, Double> entry : outputData.entrySet()) {  // Itrate through hashmap
             if (entry.getValue() == maxValueInMap) {
                 System.out.println(entry.getKey());     // Print the key with max value
             }
         }
-    }
-}
+ */
