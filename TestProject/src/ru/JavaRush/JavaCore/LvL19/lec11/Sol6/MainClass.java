@@ -33,7 +33,7 @@ public class MainClass {
 
         while (fileReader.ready()){
             String dataFile = fileReader.readLine();
-            String[] arrayName = dataFile.split("[0-9]");
+            String[] arrayName = dataFile.split("\\s[0-9\\s*]+");
             String[] arrayBirthDay = dataFile.split("^\\w*\\W*\\D*");
             SimpleDateFormat dateFormat = new SimpleDateFormat("dd MM yyyy", Locale.ENGLISH);
             Date form = dateFormat.parse(arrayBirthDay[1]);
@@ -64,3 +64,5 @@ public class MainClass {
  */
 
 // ^\W*\b
+// [^0-9\s*]+
+// ^\w*\W*\D*
