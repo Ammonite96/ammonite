@@ -6,8 +6,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * 1. В статическом блоке инициализировать словарь map парами [число-слово] от 0 до 12 включительно.
@@ -32,7 +30,7 @@ public class MainClass {
 
     static {
         String[] strNum = {"ноль", "один", "два", "три", "четыре", "пять", "шесть",
-                "семь", "восемь", "девять", "десять", "одинадцать", "двенадцать"};
+                "семь", "восемь", "девять", "десять", "одиннадцать", "двенадцать"};
         for (int i = 0; i < strNum.length; i++)
             map.put(i, strNum[i]);
     }
@@ -46,11 +44,21 @@ public class MainClass {
         String fileData;
 
         while ((fileData = fileReader.readLine()) != null) {
-            StringBuilder builder = new StringBuilder(fileData);
-            Pattern pattern = Pattern.compile("[^\\S][0-9]+");
-            Matcher matcher = pattern.matcher(builder);
-            while (matcher.find())
-                System.out.println(matcher.group());
+            String[] arrayData = fileData.split(" ");
+            for (Map.Entry<Integer, String> pair : map.entrySet()) {
+                for (int i = 0; i < arrayData.length; i++) {
+                    if (arrayData[i].equals(pair.getKey().toString())) {
+                        arrayData[i] = pair.getValue();
+                    }
+                }
+            }
+            String resultStr = "";
+            for (int i = 0; i < arrayData.length; i++)
+                resultStr += arrayData[i] + " ";
+            System.out.println(resultStr.trim());
         }
+        fileReader.close();
     }
 }
+
+// ^[.][0-9]+|(?<=.\s)[0-9]+
