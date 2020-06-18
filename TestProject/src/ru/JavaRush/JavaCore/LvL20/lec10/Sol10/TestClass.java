@@ -9,12 +9,28 @@ public class TestClass {
         long a = System.currentTimeMillis();
         System.out.println(testClass.ArmstrongNumbers(370));
         long b = System.currentTimeMillis();
-        System.out.println("memory " + (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()) / (1024 * 1024));
+        System.out.println("memory " + (Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory()) / (8 * 1024));
         System.out.println("time = " + (b - a) / 1000);
 
+        long test = Long.MAX_VALUE;
+
+        ArrayList<Long> list = new ArrayList<>();
+        for (int i = 0; i < test; i++) {
+            long re = testClass.generateNumber(i);
+            if (re != -1)
+                list.add(re);
+        }
+
+        list.forEach(aLong -> System.out.print(aLong + " "));
 
     }
 
+    private long generateNumber(long n) {
+        boolean b = ArmstrongNumbers(n);
+        if (b == true)
+            return n;
+        else return -1;
+    }
 
     private boolean ArmstrongNumbers(long n) {
         long num = n;
