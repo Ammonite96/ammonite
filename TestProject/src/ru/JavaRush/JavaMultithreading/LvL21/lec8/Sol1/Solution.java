@@ -10,10 +10,17 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Objects;
 
-public class Solution implements Cloneable{
+public class Solution implements Cloneable {
+
     @Override
-    protected Object clone() throws CloneNotSupportedException {
-        return super.clone();
+    protected Solution clone() throws CloneNotSupportedException {
+        Solution solution = new Solution();
+        for (Map.Entry<String, User> map : this.users.entrySet()) {
+            User userOriginal = map.getValue();
+            User userClone = new User(userOriginal.age, userOriginal.name);
+            solution.users.put(map.getKey(), userClone);
+        }
+        return solution;
     }
 
     public static void main(String[] args) {
@@ -22,7 +29,7 @@ public class Solution implements Cloneable{
         solution.users.put("Zapp", new User(41, "Zapp"));
         Solution clone = null;
         try {
-            clone = (Solution) solution.clone();
+            clone = solution.clone();
             System.out.println(solution);
             System.out.println(clone);
 
@@ -41,14 +48,15 @@ public class Solution implements Cloneable{
         int age;
         String name;
 
+
         public User(int age, String name) {
             this.age = age;
             this.name = name;
         }
 
         @Override
-        protected Object clone() throws CloneNotSupportedException {
-            return super.clone();
+        protected User clone() throws CloneNotSupportedException {
+            return (User) super.clone();
         }
 
         @Override
