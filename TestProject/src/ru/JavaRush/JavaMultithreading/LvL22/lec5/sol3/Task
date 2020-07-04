@@ -7,3 +7,5 @@
 a) 1# : StringForFirstThreadTooShortException : java.lang.StringIndexOutOfBoundsException: String index out of range: -1
 б) java.lang.StringIndexOutOfBoundsException: String index out of range: -1 : StringForSecondThreadTooShortException : 2#
 в) RuntimeException : java.lang.StringIndexOutOfBoundsException: String index out of range: -1 : 3#
+
+фус ро да
