@@ -8,8 +8,8 @@ import java.io.Serializable;
 
 public class Sol5MainClass {
     public static class Object implements Serializable {
-        public String string1;
-        public String string2;
+        private String string1;
+        private String string2;
     }
 
     public static int stringCount;
