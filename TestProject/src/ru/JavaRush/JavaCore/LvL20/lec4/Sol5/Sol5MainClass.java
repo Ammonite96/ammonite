@@ -8,16 +8,16 @@ import java.io.Serializable;
 
 public class Sol5MainClass {
     public static class Object implements Serializable {
-        private String string1;
-        private String string2;
+        private Stringgg stringgg1;
+        private Stringgg stringgg2;
     }
 
     public static int stringCount;
 
-    public static class String implements Serializable {
+    public static class Stringgg implements Serializable {
         private final int number;
 
-        public String() {
+        public Stringgg() {
             number = ++stringCount;
         }
 
@@ -26,7 +26,7 @@ public class Sol5MainClass {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(Stringgg[] args) {
 
     }
 }

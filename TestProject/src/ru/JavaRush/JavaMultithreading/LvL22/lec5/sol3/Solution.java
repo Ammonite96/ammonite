@@ -29,6 +29,12 @@ public class Solution {
     }
 
     public synchronized String getPartOfString(String string, String threadName) {
-        return null;
+        try {
+            return string.substring(string.indexOf('\t') +1, string.lastIndexOf('\t')) ;
+        } catch (StringIndexOutOfBoundsException e) {
+            if (threadName == Solution.FIRST_THREAD_NAME) throw new StringForFirstThreadTooShortException();
+            else if (threadName == Solution.SECOND_THREAD_NAME) throw new StringForSecondThreadTooShortException();
+            else throw new RuntimeException();
+        }
     }
 }
