@@ -13,6 +13,7 @@ public class KeyboardObserver extends Thread {
     private Queue<KeyEvent> keyEvents = new ArrayBlockingQueue<KeyEvent>(100);
 
     private JFrame frame;
+    private JPanel mainPanel;
 
     @Override
     public void run() {
