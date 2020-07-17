@@ -1,37 +1,33 @@
-package ru.JavaRush.JavaMultithreading.LvL23.lec13.ArcanoidGame;
+package ru.JavaRush.JavaMultithreading.LvL23.lec13.ArcanoidGame.ads;
 
 import java.awt.event.KeyEvent;
-import java.util.List;
+import java.util.ArrayList;
 
+/**
+ * Главный класс игры
+ */
 public class Arkanoid {
+    // ширина и высота
     private int width;
     private int height;
-    private Ball ball;
-    private Stand stand;
-    private List<Brick> bricks;
-    public static Arkanoid game;
-    private boolean isGameOver;
 
+    // список кирпичей
+    private ArrayList<Brick> bricks = new ArrayList<Brick>();
+    // шарик
+    private Ball ball;
+    // подставка
+    private Stand stand;
+
+    // игра закончена?
+    private boolean isGameOver = false;
 
     public Arkanoid(int width, int height) {
         this.width = width;
         this.height = height;
     }
 
-    public int getWidth() {
-        return width;
-    }
-
-    public void setWidth(int width) {
-        this.width = width;
-    }
-
-    public int getHeight() {
-        return height;
-    }
-
-    public void setHeight(int height) {
-        this.height = height;
+    public ArrayList<Brick> getBricks() {
+        return bricks;
     }
 
     public Ball getBall() {
@@ -50,51 +46,27 @@ public class Arkanoid {
         this.stand = stand;
     }
 
-    public List<Brick> getBricks() {
-        return bricks;
-    }
+    /**
+     * Рисуем на холсте границы и все объекты.
+     */
+    void draw(Canvas canvas) {
+        drawBorders(canvas);
 
-    public void setBricks(List<Brick> bricks) {
-        this.bricks = bricks;
-    }
-
-    public void move() {
-        ball.move();
-        stand.move();
-    }
-
-    public void draw(Canvas canvas) {
-        ball.draw(canvas);
-        stand.draw(canvas);
-        for (Brick brick : bricks)
-            brick.draw(canvas);
-    }
-
-    public void checkBricksBump() {
+        // draw bricks
         for (Brick brick : bricks) {
-            if (ball.isIntersec(brick)) {
-                double angle = Math.random() * 360;
-                ball.setDirection(angle);
-                bricks.remove(brick);
-                break;
-            }
+            brick.draw(canvas);
         }
+
+        // draw ball
+        ball.draw(canvas);
+
+        // draw stand
+        stand.draw(canvas);
+
     }
 
-    public void checkStandBump() {
-        if (ball.isIntersec(stand)) {
-            double angle = 90 + 20 * (Math.random() - 0.5);
-            ball.setDirection(angle);
-        }
-    }
-
-    public void checkEndGame() {
-        if (ball.getY() > this.height){
-            isGameOver = true;
-        }
-    }
-    /*
-      * Рисуем на холсте границы
+    /**
+     * Рисуем на холсте границы
      */
     private void drawBorders(Canvas canvas) {
         // draw game
@@ -115,7 +87,7 @@ public class Arkanoid {
         }
     }
 
-    /*
+    /**
      * Основной цикл программы.
      * Тут происходят все важные действия
      */
@@ -167,8 +139,68 @@ public class Arkanoid {
         System.out.println("Game Over!");
     }
 
+    /**
+     * Двигаем шарик и подставку.
+     */
+    public void move() {
+        ball.move();
+        stand.move();
+    }
 
-    public static void main(String[] args) {
+    /**
+     * Проверяем столкновение с кирпичами.
+     * Если столкновение было - шарик отлетает в случайном направлении 0..360 градусов
+     */
+    void checkBricksBump() {
+        for (Brick brick : new ArrayList<Brick>(bricks)) {
+            if (ball.isIntersec(brick)) {
+                double angle = Math.random() * 360;
+                ball.setDirection(angle);
+
+                bricks.remove(brick);
+            }
+        }
+    }
+
+    /**
+     * Проверяем столкновение с подставкой.
+     * Если столкновение было - шарик отлетает в случайном направлении  вверх 80..100 градусов.
+     */
+    void checkStandBump() {
+        if (ball.isIntersec(stand)) {
+            double angle = 90 + 20 * (Math.random() - 0.5);
+            ball.setDirection(angle);
+        }
+    }
+
+    /**
+     * Проверяем - не улетел ли шарик через дно.
+     * Если да - игра окончена (isGameOver = true)
+     */
+    void checkEndGame() {
+        if (ball.getY() > height && ball.getDy() > 0)
+            isGameOver = true;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public void setWidth(int width) {
+        this.width = width;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
+
+    public static Arkanoid game;
+
+    public static void main(String[] args) throws Exception {
         game = new Arkanoid(20, 30);
 
         Ball ball = new Ball(10, 29, 2, 95);
@@ -182,11 +214,7 @@ public class Arkanoid {
         game.getBricks().add(new Brick(12, 5));
         game.getBricks().add(new Brick(16, 3));
 
-
-        try {
-            game.run();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        game.run();
     }
 }
+
