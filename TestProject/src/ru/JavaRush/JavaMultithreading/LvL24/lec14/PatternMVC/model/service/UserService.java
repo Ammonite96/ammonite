@@ -1,0 +1,21 @@
+package ru.JavaRush.JavaMultithreading.LvL24.lec14.PatternMVC.model.service;
+
+import ru.JavaRush.JavaMultithreading.LvL24.lec14.PatternMVC.been.User;
+
+import java.util.List;
+
+public interface UserService {
+    public User deleteUser(long id);
+
+    public User createOrUpdateUser(String name, long id, int level);
+
+    public List<User> getUsersByName(String name);
+
+    public List<User> getAllDeletedUsers();
+
+    public List<User> getUsersBetweenLevels(int fromLevel, int toLevel);
+
+    List<User> filterOnlyActiveUsers(List<User> allUsers);
+
+    User getUsersById(long userId);
+}
