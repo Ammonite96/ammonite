@@ -1,11 +1,13 @@
 package ru.JavaRush.JavaMultithreading.LvL24.lec14.PatternMVC.controller;
 
 import ru.JavaRush.JavaMultithreading.LvL24.lec14.PatternMVC.model.Model;
+import ru.JavaRush.JavaMultithreading.LvL24.lec14.PatternMVC.view.EditUserView;
 import ru.JavaRush.JavaMultithreading.LvL24.lec14.PatternMVC.view.UsersView;
 
 public class Controller {
     private Model model;
     private UsersView usersView;
+    private EditUserView editUserView;
 
     public void setModel(Model model) {
         this.model = model;
@@ -23,6 +25,25 @@ public class Controller {
 
     public void setUsersView(UsersView usersView) {
         this.usersView = usersView;
+    }
+
+    public void setEditUserView(EditUserView editUserView) {
+        this.editUserView = editUserView;
+    }
+
+    public void onOpenUserEditForm(long userId){
+        model.loadUserById(userId);
+        editUserView.refresh(model.getModelData());
+    }
+
+    public void onUserDelete(long id){
+        model.deleteUserById(id);
+        usersView.refresh(model.getModelData());
+    }
+
+    public void onUserChange(String name, long id, int level){
+        model.changeUserData(name, id, level);
+        usersView.refresh(model.getModelData());
     }
 }
 
