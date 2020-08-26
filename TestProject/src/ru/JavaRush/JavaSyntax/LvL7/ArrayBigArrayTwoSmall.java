@@ -1,4 +1,4 @@
-package ru.JavaRush.LvL7;
+package ru.JavaRush.JavaSyntax.LvL7;
 
 import java.io.BufferedReader;
 import java.io.IOException;

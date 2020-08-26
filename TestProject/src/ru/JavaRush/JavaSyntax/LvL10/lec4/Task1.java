@@ -1,4 +1,4 @@
-package ru.JavaRush.LvL10.lec4;
+package ru.JavaRush.JavaSyntax.LvL10.lec4;
 
 /**
  * Расставьте правильно операторы приведения типа, чтобы получился ответ: d > 0

@@ -1,4 +1,4 @@
-package TP1JavaRush4lvl;
+package ru.JavaRush.JavaSyntax.LvL4;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,9 +12,9 @@ public class TreeNumbersOrder {
         int b = Integer.parseInt(reader.readLine());
         int c = Integer.parseInt(reader.readLine());
 // int x, y, z;
-        if (a <= b && a <= c && b <= c)
+        if (a <= b && a <= c && b <= c) {
             System.out.println(c + " " + b + " " + a + " ");
-        else if (b <= a && b <= c && a <= c)
+        } else if (b <= a && b <= c && a <= c)
             System.out.println(c + " " + a + " " + b + " ");
         else if (c <= a && c <= b && a <= b)
             System.out.println(b + " " + a + " " + c + " ");
@@ -22,7 +22,6 @@ public class TreeNumbersOrder {
             System.out.println(a + " " + c + " " + b + " ");
         else if (c <= a && c <= b && b <= a)
             System.out.println(a + " " + b + " " + c + " ");
-        else if (a <= b && a <= c && c <= b)
-            System.out.println(b + " " + c + " " + a + " ");
+        else System.out.println(b + " " + c + " " + a + " ");
     }
 }

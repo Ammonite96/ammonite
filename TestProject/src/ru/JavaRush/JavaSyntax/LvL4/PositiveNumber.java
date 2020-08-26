@@ -1,4 +1,4 @@
-package TP1JavaRush4lvl;
+package ru.JavaRush.JavaSyntax.LvL4;
 
 import java.io.BufferedReader;
 import java.io.IOException;
