@@ -91,5 +91,24 @@ public class Server {
                 }
             }
         }
+
+        @Override
+        public void run() {
+            ConsoleHelper.writeMessage(String.valueOf(socket.getRemoteSocketAddress()));
+            try (Connection connection = new Connection(socket)){
+                String userName = serverHandshake(connection);
+                sendBroadcastMessage(new Message(USER_ADDED, userName));
+                notifyUsers(connection, userName);
+                serverMainLoop(connection, userName);
+
+                if (userName != null || !(userName.isEmpty())){
+                    connectionMap.remove(userName);
+                    sendBroadcastMessage(new Message(USER_REMOVED, userName));
+                }
+            } catch (IOException | ClassNotFoundException e) {
+                e.printStackTrace();
+                ConsoleHelper.writeMessage(String.valueOf(socket.isClosed()));
+            }
+        }
     }
 }

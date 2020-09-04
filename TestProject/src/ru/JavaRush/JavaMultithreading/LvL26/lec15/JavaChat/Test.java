@@ -1,5 +1,7 @@
 package ru.JavaRush.JavaMultithreading.LvL26.lec15.JavaChat;
 
+import ru.JavaRush.JavaMultithreading.LvL26.lec15.JavaChat.client.Client;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -40,4 +42,5 @@ public class Test {
     public static void main(String[] args) {
         System.out.println(readInt());
     }
+
 }
