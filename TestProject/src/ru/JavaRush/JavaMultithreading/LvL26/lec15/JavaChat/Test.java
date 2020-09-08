@@ -2,6 +2,7 @@ package ru.JavaRush.JavaMultithreading.LvL26.lec15.JavaChat;
 
 import ru.JavaRush.JavaMultithreading.LvL26.lec15.JavaChat.client.Client;
 
+import javax.crypto.spec.PSource;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -39,8 +40,13 @@ public class Test {
         return consoleInt;
     }
 
+    protected static String getUserName() {
+        int xRandom = (int) (Math.random() * 99);
+        return String.format("%s%d", "date_bot_", xRandom);
+    }
+
     public static void main(String[] args) {
-        System.out.println(readInt());
+        System.out.println(getUserName());
     }
 
 }
