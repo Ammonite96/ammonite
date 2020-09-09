@@ -69,7 +69,7 @@ public class SimpleChatClient {
     }
     private void setUpNetworking(){
         try{
-            socket = new Socket("127.0.0.1", 5000);
+            socket = new Socket("127.0.0.1", 8080);
             InputStreamReader streamReader = new InputStreamReader(socket.getInputStream());
             reader = new BufferedReader(streamReader);
             writer = new PrintWriter(socket.getOutputStream());

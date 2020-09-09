@@ -12,6 +12,7 @@ public class Server {
     private static Map<String, Connection> connectionMap = new ConcurrentHashMap<>();
 
     public static void main(String[] args) {
+        ConsoleHelper.writeMessage("Введите порт сервера!");
         int port = ConsoleHelper.readInt();
         try (ServerSocket serverSocket = new ServerSocket(port)) {
             ConsoleHelper.writeMessage("Сервер запущен");

@@ -53,11 +53,11 @@ public class Client {
         }
 
         protected void informAboutAddingNewUser(String userName) {
-            ConsoleHelper.writeMessage(userName + "Присоединился к чату");
+            ConsoleHelper.writeMessage(userName + " Присоединился к чату");
         }
 
         protected void informAboutDeletingNewUser(String userName) {
-            ConsoleHelper.writeMessage(userName + "Покинул чат");
+            ConsoleHelper.writeMessage(userName + " Покинул чат");
         }
 
         protected void notifyConnectionStatusChanged(boolean clientConnected) {
