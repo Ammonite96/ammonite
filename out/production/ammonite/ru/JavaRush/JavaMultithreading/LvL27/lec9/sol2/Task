@@ -1,0 +1,5 @@
+Расставь wait-notify.
+
+Пример вывода:
+Thread-0 MailServer received: [Person [Thread-1]
+wrote an email 'AAA'] in 1001 ms after start
