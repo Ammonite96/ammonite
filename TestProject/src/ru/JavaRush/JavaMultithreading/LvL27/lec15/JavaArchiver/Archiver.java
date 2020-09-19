@@ -18,12 +18,9 @@ public class Archiver {
             try {
                 operation = askOperation();
                 CommandExecutor.execute(operation);
-
             } catch (WrongZipFileException we) {
                 ConsoleHelper.writeMessage("Вы не выбрали файл архива или выбрали неверный файл.");
-            } catch (IOException io) {
-                ConsoleHelper.writeMessage("Произошла ошибка. Проверьте введенные данные.");
-            } catch (Exception e) {
+            } catch (Exception io) {
                 ConsoleHelper.writeMessage("Произошла ошибка. Проверьте введенные данные.");
             }
         } while (operation != EXIT);
@@ -33,7 +30,7 @@ public class Archiver {
         Operation.getAskOperation();
 
         int numOperation = ConsoleHelper.readInt();
-        Operation operation = null;
+        Operation operation;
         operation = Operation.values()[numOperation];
         return operation;
     }
