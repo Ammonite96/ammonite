@@ -26,7 +26,7 @@ public class FileManager {
             fileList.add(rootPath.relativize(path));
         } else if (Files.isDirectory(path)) {
             try (DirectoryStream<Path> directoryStream = Files.newDirectoryStream(path)) {
-                for (Path p : directoryStream){
+                for (Path p : directoryStream) {
                     collectFileList(p);
                 }
             }
