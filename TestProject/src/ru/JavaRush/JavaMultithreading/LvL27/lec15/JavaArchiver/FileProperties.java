@@ -35,7 +35,7 @@ public class FileProperties {
 
     @Override
     public String toString() {
-        if (size > 0){
+        if (size > 0) {
             return String.format("%s %d Kb (%d Kb) сжатие: %d%%",
                     name,
                     size / 1024,
