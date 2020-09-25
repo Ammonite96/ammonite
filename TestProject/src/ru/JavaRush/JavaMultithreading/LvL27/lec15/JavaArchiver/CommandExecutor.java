@@ -24,6 +24,14 @@ public class CommandExecutor {
     }
 
     public static void execute(Operation operation) throws Exception {
+        allKnownCommandsMap.get(operation).execute();
+    }
+}
+
+
+/*
+
+public static void execute(Operation operation) throws Exception {
         switch (operation) {
             case CREATE:
                 allKnownCommandsMap.get(CREATE).execute();
@@ -47,4 +55,5 @@ public class CommandExecutor {
                 throw new IllegalStateException("Unexpected value: " + operation);
         }
     }
-}
+
+ */
