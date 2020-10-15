@@ -2,17 +2,41 @@ package ru.JavaRush.JavaMultithreading.LvL28.lec15.htmlEditor;
 
 import ru.JavaRush.JavaMultithreading.LvL28.lec15.htmlEditor.listeners.FrameListener;
 import ru.JavaRush.JavaMultithreading.LvL28.lec15.htmlEditor.listeners.TabbedPaneChangeListener;
+import ru.JavaRush.JavaMultithreading.LvL28.lec15.htmlEditor.listeners.UndoListener;
 
 import javax.swing.*;
+import javax.swing.undo.UndoManager;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class View extends JFrame implements ActionListener {
     private Controller controller;
+
     private JTabbedPane tabbedPane = new JTabbedPane(); //это будет панель с двумя вкладками.
     private JTextPane htmlTextPane = new JTextPane(); //это будет компонент для визуального редактирования html. Он будет размещен на первой вкладке.
     private JEditorPane plainTextPane = new JEditorPane(); //это будет компонент для редактирования html в виде текста, он будет отображать код html(теги и их содержимое).
+
+    private UndoManager undoManager = new UndoManager();
+    private UndoListener undoListener = new UndoListener(undoManager);
+
+    public View() {
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (ClassNotFoundException e) {
+            ExceptionHandler.log(e);
+        } catch (InstantiationException e) {
+            ExceptionHandler.log(e);
+        } catch (IllegalAccessException e) {
+            ExceptionHandler.log(e);
+        } catch (UnsupportedLookAndFeelException e) {
+            ExceptionHandler.log(e);
+        }
+    }
+
+    public UndoListener getUndoListener() {
+        return undoListener;
+    }
 
     public Controller getController() {
         return controller;
@@ -40,7 +64,15 @@ public class View extends JFrame implements ActionListener {
     }
 
     public void initMenuBar() {         // отвечаепт за инициализацию меню
-
+        JMenuBar menuBar = new JMenuBar();
+        MenuHelper.initFileMenu(this, menuBar);
+        MenuHelper.initEditMenu(this, menuBar);
+        MenuHelper.initStyleMenu(this, menuBar);
+        MenuHelper.initAlignMenu(this, menuBar);
+        MenuHelper.initColorMenu(this, menuBar);
+        MenuHelper.initFontMenu(this, menuBar);
+        MenuHelper.initHelpMenu(this, menuBar);
+        getContentPane().add(menuBar, BorderLayout.NORTH);
     }
 
     public void initEditor() {          // отвечает за инициализацию пеанелей редактора
@@ -64,5 +96,33 @@ public class View extends JFrame implements ActionListener {
 
     public void selectedTabChanged() {
 
+    }
+
+    public boolean canUndo() {
+        return undoManager.canUndo();
+    }
+
+    public boolean canRedo() {
+        return undoManager.canRedo();
+    }
+
+    public void undo() {    //отменяет последнее действие
+        try {
+            undoManager.undo();
+        } catch (Exception e) {
+            ExceptionHandler.log(e);
+        }
+    }
+
+    public void redo() {    //возвращает ранее отмененное действие
+        try {
+            undoManager.redo();
+        } catch (Exception e) {
+            ExceptionHandler.log(e);
+        }
+    }
+
+    public void resetUndo() {
+        undoManager.discardAllEdits();
     }
 }

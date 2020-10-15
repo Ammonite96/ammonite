@@ -1,7 +1,8 @@
 package ru.JavaRush.JavaMultithreading.LvL28.lec15.htmlEditor;
 
-import ru.JavaRush.JavaMultithreading.LvL28.lec15.htmlEditor.actions.RedoAction;
-import ru.JavaRush.JavaMultithreading.LvL28.lec15.htmlEditor.actions.UndoAction;
+import ru.JavaRush.JavaMultithreading.LvL28.lec15.htmlEditor.actions.*;
+import ru.JavaRush.JavaMultithreading.LvL28.lec15.htmlEditor.listeners.TextEditMenuListener;
+import ru.JavaRush.JavaMultithreading.LvL28.lec15.htmlEditor.listeners.UndoMenuListener;
 
 import javax.swing.*;
 import javax.swing.text.DefaultEditorKit;
@@ -30,19 +31,6 @@ public class MenuHelper {
         menuItem.setText(text);
         return menuItem;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     public static void initHelpMenu(View view, JMenuBar menuBar) {  // - инициализация меню помощи.
         JMenu helpMenu = new JMenu("Помощь");
