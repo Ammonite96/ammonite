@@ -23,13 +23,7 @@ public class View extends JFrame implements ActionListener {
     public View() {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch (ClassNotFoundException e) {
-            ExceptionHandler.log(e);
-        } catch (InstantiationException e) {
-            ExceptionHandler.log(e);
-        } catch (IllegalAccessException e) {
-            ExceptionHandler.log(e);
-        } catch (UnsupportedLookAndFeelException e) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException e) {
             ExceptionHandler.log(e);
         }
     }
@@ -48,7 +42,27 @@ public class View extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        String actionCommand = e.getActionCommand();
+        switch (actionCommand) {
+            case "Новый":
+                controller.createNewDocument();
+                break;
+            case "Открыть":
+                controller.openDocument();
+                break;
+            case "Сохранить":
+                controller.saveDocument();
+                break;
+            case "Сохранить как...":
+                controller.saveDocumentAs();
+                break;
+            case "Выход":
+                controller.exit();
+                break;
+            case "О программе":
+                showAbout();
+                break;
+        }
     }
 
     public void init() {
@@ -95,7 +109,12 @@ public class View extends JFrame implements ActionListener {
     }
 
     public void selectedTabChanged() {
-
+        if (tabbedPane.getSelectedIndex() == 0) {
+            controller.setPlainText(plainTextPane.getText());
+        } else if (tabbedPane.getSelectedIndex() == 1) {
+            plainTextPane.setText(controller.getPlainText());
+        }
+        resetUndo();
     }
 
     public boolean canUndo() {
@@ -124,5 +143,25 @@ public class View extends JFrame implements ActionListener {
 
     public void resetUndo() {
         undoManager.discardAllEdits();
+    }
+
+    public boolean isHtmlTabSelected() {
+        if (tabbedPane.getSelectedIndex() == 0) {
+            return true;
+        }
+        return false;
+    }
+
+    public void selectHtmlTab() {
+        tabbedPane.getTabComponentAt(0);
+        isHtmlTabSelected();
+    }
+
+    public void update() {
+        htmlTextPane.setDocument(controller.getDocument());
+    }
+
+    public void showAbout() {
+        JOptionPane.showMessageDialog(this, "HTML редактор", "О программе", JOptionPane.INFORMATION_MESSAGE);
     }
 }

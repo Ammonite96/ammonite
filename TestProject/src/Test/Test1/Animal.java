@@ -53,4 +53,9 @@ public class Animal {
     public void voice(){
         System.out.println("подаёт голос");
     }
+
+    @Override
+    public String toString() {
+        return String.format("Имя %s, возраст %d лет, вес %d", name, age, weight);
+    }
 }

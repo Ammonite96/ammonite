@@ -2,10 +2,18 @@ package Test.Test1;
 
 public class MainClass {
     public static void main(String[] args) {
-        Object o = new Animal(5, "Kor", 10);
-        ((Animal)o).voice();
+        Animal animal = new Animal(5, "dfg", 2);
+        animal.voice();
 
-        System.out.println(o.toString());
+        System.out.println(animal.toString());
+
+        Cat cat = new Cat(0, "Vasia", 10);
+        cat.voice();
+        System.out.println(cat.toString());
+
+        Dog dog = new Dog(1, "Tuzik", 15);
+        dog.voice();
+        System.out.println(dog.toString());
 
     }
 }

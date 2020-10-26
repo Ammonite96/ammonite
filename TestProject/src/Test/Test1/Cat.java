@@ -18,6 +18,11 @@ public class Cat extends Animal {
     }
 
     @Override
+    public String toString() {
+        return super.toString();
+    }
+
+    @Override
     public void voice() {
         System.out.println("Мяу");
         System.out.print("Кот" + " ");

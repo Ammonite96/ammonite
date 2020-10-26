@@ -24,4 +24,9 @@ public class Dog extends Animal {
         System.out.println("Гав");
         System.out.print("Собака" + " ");
     }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }

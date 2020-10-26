@@ -14,7 +14,7 @@ public class Main {
         System.out.println("Max Speed: " +toyota.getMaxSpeed() + " " + "Model: " + toyota.getModel() + " " + toyota.getBody());
         System.out.println(toyota.driveForward());
 
-        Toyota toyota1 = (Toyota) new Car();
-        System.out.println(toyota1.getModel());
+        Car car1 = new Toyota();
+        System.out.println(car1.getModel());
     }
 }
