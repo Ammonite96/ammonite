@@ -1,16 +1,17 @@
 package ru.JavaRush.JavaMultithreading.LvL29.MenuOfRestaurant.kitchen;
 
+/*
+Класс повара. Наблюдающий обьект за классом Планшета (Tablet). А так же объект оповещающий (Waiter)
+ */
+
 import ru.JavaRush.JavaMultithreading.LvL29.MenuOfRestaurant.ConsoleHelper;
-import ru.JavaRush.JavaMultithreading.LvL29.MenuOfRestaurant.Tablet;
 
 import java.util.Observable;
 import java.util.Observer;
 
-public class Cook implements Observer {
+public class Cook extends Observable implements Observer  {
 
     private final String name;
-    private Tablet tablet;
-    private Order order;
 
     public Cook(String name) {
         this.name = name;
@@ -25,7 +26,8 @@ public class Cook implements Observer {
 
     @Override
     public void update(Observable o, Object arg) {
-        this.order = (Order) arg;
-        ConsoleHelper.writeMessage("Start cooking - " + order);
+        ConsoleHelper.writeMessage("Start cooking - " + arg);
+        setChanged();
+        notifyObservers(arg);
     }
 }

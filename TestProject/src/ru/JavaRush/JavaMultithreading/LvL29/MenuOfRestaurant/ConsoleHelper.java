@@ -1,6 +1,7 @@
 package ru.JavaRush.JavaMultithreading.LvL29.MenuOfRestaurant;
-
-import com.sun.source.tree.IfTree;
+/*
+Класс работы с консолью.
+ */
 import ru.JavaRush.JavaMultithreading.LvL29.MenuOfRestaurant.kitchen.Dish;
 
 import java.io.BufferedReader;
@@ -8,21 +9,22 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 public class ConsoleHelper {
 
     private static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-    public static void writeMessage(String message) {
+    public static void writeMessage(String message) {       // Метод выводит переданное сообщение (message) в консоль
         System.out.println(message);
     }
 
-    public static String readString() throws IOException {
+    public static String readString() throws IOException {      // Метод считывает строку с консоли
         return reader.readLine();
     }
 
-    public static List<Dish> getAllDishesForOrder() throws IOException {
+    public static List<Dish> getAllDishesForOrder() throws IOException {        // Метод который просит пользователя выбрать блюдо и добавляет его в список.
         List<Dish> dishes = new ArrayList<>();
         writeMessage(Arrays.toString(Dish.values()));
         writeMessage("Выбери блюдо и введи название");
@@ -45,32 +47,3 @@ public class ConsoleHelper {
         return dishes;
     }
 }
-
-
-/*
-
-public static List<Dish> getAllDishesForOrder() throws Exception {
-        List<Dish> dishes = new ArrayList<>();
-        System.out.println(Arrays.toString(Dish.values()));
-        writeMessage("Выбери блюдо и введи название");
-        writeMessage("Для выхода введи 'exit'");
-
-        while (true) {
-            String dish = readString();
-            if (dish.equals("exit")) {
-                break;
-            }
-            List<Dish> copyDish = Arrays.asList(Dish.values());
-
-            Dish s = copyDish.stream().filter(dish1 -> dish1.toString().equals(dish))
-                    .findFirst()
-                    .orElseThrow(() -> new Exception("Dishes is Empty"));
-
-            dishes.add(s);
-
-
-        }
-            return dishes;
-    }
-
- */
