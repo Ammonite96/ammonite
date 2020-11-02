@@ -5,6 +5,7 @@ package ru.JavaRush.JavaMultithreading.LvL29.MenuOfRestaurant;
  */
 
 import ru.JavaRush.JavaMultithreading.LvL29.MenuOfRestaurant.ad.AdvertisementManager;
+import ru.JavaRush.JavaMultithreading.LvL29.MenuOfRestaurant.ad.NoVideoAvailableException;
 import ru.JavaRush.JavaMultithreading.LvL29.MenuOfRestaurant.kitchen.Order;
 
 import java.io.IOException;
@@ -26,7 +27,7 @@ public class Tablet extends Observable {
         AdvertisementManager advertisementManager = null;
         try {
             order = new Order(this);
-            if (!order.isEmpty()){
+            if (!order.isEmpty()) {
                 advertisementManager = new AdvertisementManager(order.getTotalCookingTime() * 60);
                 setChanged();
                 notifyObservers(order);
@@ -34,6 +35,8 @@ public class Tablet extends Observable {
             }
         } catch (IOException e) {
             logger.log(Level.SEVERE, "Console is unavailable.");
+        } catch (NoVideoAvailableException ex) {
+            logger.log(Level.INFO, "No video is available for the order " + order);
         }
         return order;
     }
