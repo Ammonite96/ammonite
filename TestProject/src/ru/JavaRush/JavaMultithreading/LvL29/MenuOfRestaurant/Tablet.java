@@ -7,6 +7,8 @@ package ru.JavaRush.JavaMultithreading.LvL29.MenuOfRestaurant;
 import ru.JavaRush.JavaMultithreading.LvL29.MenuOfRestaurant.ad.AdvertisementManager;
 import ru.JavaRush.JavaMultithreading.LvL29.MenuOfRestaurant.ad.NoVideoAvailableException;
 import ru.JavaRush.JavaMultithreading.LvL29.MenuOfRestaurant.kitchen.Order;
+import ru.JavaRush.JavaMultithreading.LvL29.MenuOfRestaurant.statistic.StatisticManager;
+import ru.JavaRush.JavaMultithreading.LvL29.MenuOfRestaurant.statistic.event.NoAvailableVideoEventDataRow;
 
 import java.io.IOException;
 import java.util.Observable;
@@ -36,6 +38,7 @@ public class Tablet extends Observable {
         } catch (IOException e) {
             logger.log(Level.SEVERE, "Console is unavailable.");
         } catch (NoVideoAvailableException ex) {
+            StatisticManager.getInstance().register(new NoAvailableVideoEventDataRow(order.getTotalCookingTime()));
             logger.log(Level.INFO, "No video is available for the order " + order);
         }
         return order;

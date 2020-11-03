@@ -5,11 +5,13 @@ package ru.JavaRush.JavaMultithreading.LvL29.MenuOfRestaurant.kitchen;
  */
 
 import ru.JavaRush.JavaMultithreading.LvL29.MenuOfRestaurant.ConsoleHelper;
+import ru.JavaRush.JavaMultithreading.LvL29.MenuOfRestaurant.statistic.StatisticManager;
+import ru.JavaRush.JavaMultithreading.LvL29.MenuOfRestaurant.statistic.event.CookedOrderEventDataRow;
 
 import java.util.Observable;
 import java.util.Observer;
 
-public class Cook extends Observable implements Observer  {
+public class Cook extends Observable implements Observer {
 
     private final String name;
 
@@ -26,7 +28,15 @@ public class Cook extends Observable implements Observer  {
 
     @Override
     public void update(Observable o, Object arg) {
+        Order order = (Order) arg;
         ConsoleHelper.writeMessage("Start cooking - " + arg);
+        // Генерирует Событие повара
+        StatisticManager.getInstance().register(new CookedOrderEventDataRow(
+                o.toString(),
+                this.name,
+                order.getTotalCookingTime(),
+                order.getDishes()));
+
         setChanged();
         notifyObservers(arg);
     }

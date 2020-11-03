@@ -30,6 +30,10 @@ public class Order {
         }
     }
 
+    public List<Dish> getDishes() {
+        return dishes;
+    }
+
     @Override
     public String toString() {
         if (dishes.isEmpty()){
