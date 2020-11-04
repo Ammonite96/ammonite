@@ -52,6 +52,10 @@ public class Advertisement {
     public String toString() {
         return getName() + " is displaying..." + getAmountPerOneDisplaying() + " " + getAmountPerOneDisplaying() * 1000 / getDuration();
     }
+
+    public boolean isActive() {
+        return hits > 0;
+    }
 }
 
 

@@ -35,9 +35,6 @@ public class AdvertisementManager {
         int amount = 0;
         int totalDuration = 0;
 
-        ConsoleHelper.writeMessage("видео выбрано");
-        StatisticManager.getInstance().register(new VideoSelectedEventDataRow(listVideo, amount, totalDuration));
-
         for (Advertisement advertisement : listVideo) {
             amount += advertisement.getAmountPerOneDisplaying();
             totalDuration += advertisement.getDuration();
@@ -48,6 +45,7 @@ public class AdvertisementManager {
                 time = time - advertisement.getDuration();
             }
         }
+        StatisticManager.getInstance().register(new VideoSelectedEventDataRow(listVideo, amount, totalDuration));
     }
 }
 

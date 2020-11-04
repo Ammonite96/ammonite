@@ -6,12 +6,14 @@ package ru.JavaRush.JavaMultithreading.LvL29.MenuOfRestaurant.statistic;
  */
 
 import ru.JavaRush.JavaMultithreading.LvL29.MenuOfRestaurant.kitchen.Cook;
+import ru.JavaRush.JavaMultithreading.LvL29.MenuOfRestaurant.statistic.event.CookedOrderEventDataRow;
 import ru.JavaRush.JavaMultithreading.LvL29.MenuOfRestaurant.statistic.event.EventDataRow;
 import ru.JavaRush.JavaMultithreading.LvL29.MenuOfRestaurant.statistic.event.EventType;
 import ru.JavaRush.JavaMultithreading.LvL29.MenuOfRestaurant.statistic.event.VideoSelectedEventDataRow;
 
+import java.text.SimpleDateFormat;
 import java.util.*;
-import java.util.stream.Collectors;
+
 
 public class StatisticManager {
 
@@ -19,6 +21,8 @@ public class StatisticManager {
     private StatisticStorage statisticStorage = new StatisticStorage();
 
     private Set<Cook> cooks = new HashSet<>();
+    private SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy", Locale.ENGLISH);
+    private List<EventDataRow> dataRowList;
 
     private StatisticManager() {
     }
@@ -38,13 +42,36 @@ public class StatisticManager {
         cooks.add(cook);
     }
 
-    public Map<EventType, List<EventDataRow>> getMapInInnerClass() {
-        return statisticStorage.getStorage();
+    public Set<Cook> getCooks() {
+        return cooks;
     }
 
-    public Map<Date, Long> totalProfitForEachDay() {      // метод который из хранилища достанет все данные, относящиеся к отображению рекламы, и посчитает общую прибыль за каждый день.
-        return statisticStorage.getStorage().get(EventType.SELECTED_VIDEOS).stream()
-                .collect(Collectors.groupingBy(EventDataRow::getDate, Collectors.summingLong(e -> ((VideoSelectedEventDataRow) e).getAmount())));
+    public Map<String, Double> totalProfitForEachDay() {      // метод который из хранилища достанет все данные, относящиеся к отображению рекламы, и посчитает общую прибыль за каждый день.
+        Map<String, Double> returnMap = new TreeMap<>(Collections.reverseOrder());
+        dataRowList = statisticStorage.getStorage().get(EventType.SELECTED_VIDEOS);
+
+        for (EventDataRow eventDataRow : dataRowList) {
+            VideoSelectedEventDataRow dataRow = (VideoSelectedEventDataRow) eventDataRow;
+            double amount = dataRow.getAmount() / 100;
+            returnMap.put(dateFormat.format(dataRow.getDate()), amount);
+        }
+
+        return returnMap;
+    }
+
+    public Map<String, Map<String, Integer>> totalCookWorkload() {
+        Map<String, Map<String, Integer>> returnMap = new TreeMap<>(Collections.reverseOrder());
+        dataRowList = statisticStorage.getStorage().get(EventType.COOKED_ORDER);
+        Map<String, Integer> nameAndTimeCook = new TreeMap<>(Collections.reverseOrder());
+
+        for (EventDataRow eventDataRow : dataRowList) {
+            CookedOrderEventDataRow cookedRow = (CookedOrderEventDataRow) eventDataRow;
+
+            nameAndTimeCook.put(cookedRow.getCookName(), cookedRow.getTime());
+            returnMap.put(dateFormat.format(cookedRow.getDate()), nameAndTimeCook);
+        }
+
+        return returnMap;
     }
 
     private class StatisticStorage {

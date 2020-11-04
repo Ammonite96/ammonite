@@ -5,31 +5,59 @@ main Класс
  */
 
 import ru.JavaRush.JavaMultithreading.LvL29.MenuOfRestaurant.kitchen.Cook;
+import ru.JavaRush.JavaMultithreading.LvL29.MenuOfRestaurant.kitchen.Order;
 import ru.JavaRush.JavaMultithreading.LvL29.MenuOfRestaurant.kitchen.Waiter;
 import ru.JavaRush.JavaMultithreading.LvL29.MenuOfRestaurant.statistic.StatisticManager;
-import ru.JavaRush.JavaMultithreading.LvL29.MenuOfRestaurant.statistic.event.EventDataRow;
-import ru.JavaRush.JavaMultithreading.LvL29.MenuOfRestaurant.statistic.event.EventType;
-import ru.JavaRush.JavaMultithreading.LvL29.MenuOfRestaurant.statistic.event.VideoSelectedEventDataRow;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
-import java.util.Map;
+import java.util.concurrent.LinkedBlockingQueue;
 
 public class Restaurant {
+    private static final int ORDER_CREATING_INTERVAL = 100;
+    private static final LinkedBlockingQueue<Order> orderQueue = new LinkedBlockingQueue(200);
+
+
     public static void main(String[] args) throws Exception {
-        Tablet tablet = new Tablet(5);
-        Cook cook = new Cook("Pedro");
+
+        List<Tablet> tablets = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            Tablet tablet = new Tablet(i + 1);
+            tablet.setQueue(orderQueue);
+            tablets.add(tablet);
+        }
+
+        Cook cook = new Cook("Amigo");
+        cook.setQueue(orderQueue);
+        Cook cook2 = new Cook("FIFA");
+        cook2.setQueue(orderQueue);
+
         Waiter waiter = new Waiter();
-        tablet.addObserver(cook);
         cook.addObserver(waiter);
+        cook2.addObserver(waiter);
 
-        tablet.createOrder();
+        Thread cook11 = new Thread(cook);
+        cook11.start();
+        Thread cook22 = new Thread(cook2);
+        cook22.start();
+        Thread thread = new Thread(new RandomOrderGeneratorTask(tablets, ORDER_CREATING_INTERVAL));
+        thread.start();
 
-        System.out.println(StatisticManager.getInstance().totalProfitForEachDay());
+        try {
+            Thread.sleep(1000);
+            thread.interrupt();
+            thread.join();
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+        }
 
+        // Show statistic
         DirectorTablet directorTablet = new DirectorTablet();
-        directorTablet.printActiveVideoSet();
         directorTablet.printAdvertisementProfit();
-        directorTablet.printArchivedVideoSet();
         directorTablet.printCookWorkloading();
+        directorTablet.printActiveVideoSet();
+        directorTablet.printArchivedVideoSet();
+
     }
 }

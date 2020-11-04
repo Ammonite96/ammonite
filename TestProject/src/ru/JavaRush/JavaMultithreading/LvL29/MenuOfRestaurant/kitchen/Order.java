@@ -42,4 +42,8 @@ public class Order {
             return "Your order: " + dishes.toString() + " of " + tablet + ", cooking time " + getTotalCookingTime() + "min";
         }
     }
+
+    public Tablet getTablet() {
+        return tablet;
+    }
 }
